@@ -38,5 +38,9 @@ Route::get('/user/logout', 'ClassroomsController@Logout')->name('Logout');
 Route::get('/showStudents/{id}', 'ClassroomsController@showStudents')->name('showStudents');
 Route::get('/deleteStudents/{id}', 'ClassroomsController@handleDeleteStudent')->name('handleDeleteStudent');
 
+
+Route::post('/add/{id}', 'ClassroomsController@handleAddStudent')->name('handleAddStudent');
+
+
 });
 

@@ -161,6 +161,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        ArtemSchander\L5Modular\ModuleServiceProvider::class,
+       Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Package Service Providers...

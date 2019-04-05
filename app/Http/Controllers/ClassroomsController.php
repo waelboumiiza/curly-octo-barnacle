@@ -11,6 +11,7 @@ use Redirect;
 use App\Classroom;
 use App\Students;
 use App\User;
+use Intervention\Image\Facades\Image;
 
 class ClassroomsController extends Controller
 {
@@ -258,6 +259,29 @@ class ClassroomsController extends Controller
         
        
   }
+
+public function  handleAddStudent($id)
+    {
+        $data=Input::all();
+        
+
+        $photo = 'photo-' . str_random(5) . time() . '.' . $data['photo']->getClientOriginalExtension();
+           $fullImagePath = public_path('storage/' . $photo);
+           Image::make($data['photo']->getRealPath())->save($fullImagePath);
+           $photoPath = 'storage/' . $photo;
+
+           Students::create(['name'=>$data['name'],
+            'age'=>$data['age'],
+            'photo'=>$photoPath,
+            'classroom_id' =>$id
+
+        ]);
+   
+        
+       
+  }
+
+
 
    
 

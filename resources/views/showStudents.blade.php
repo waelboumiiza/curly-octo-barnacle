@@ -107,6 +107,24 @@
 
 
            		</table>
+
+                <form method="post" action="{{route('handleAddStudent', [$cl->id])}}" enctype="multipart/form-data">
+                    @csrf
+
+                      <label for="k">Name</label>
+                <input type="text" name="name" id="k"><br><br>
+                   <label for="n">Age</label>
+                <input type="number"  name="age" id="n"><br><br>
+
+                    <label for="m">Photo</label>
+                  <input type="file" src="" name="photo" id="m"><br><br>
+
+
+
+                  
+             <button type="submit"> Envoyer</button>
+                    
+                </form>
                 
 
 
